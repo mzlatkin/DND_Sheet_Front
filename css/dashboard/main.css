@@ -1,37 +1,30 @@
 .character_picker {            
-    width:100%;
-    height:2rem;
+    height:10%;
     background-color:#33cc33;
 }
 .char_data {
-	width:100%;
-    height:2rem;
+    height:10%;
     background-color:#ff3300;
 }
 
 .skill_container {
-	width: 100%;
-	height: 4rem;
+	height: 20%;
 	background-color: #0000ff;
 }
 .attribute_container {
-	width: 100%;
-	height: 4rem;
+	height: 20%;
 	background-color: #ff00bf;
 }
 
 .armor_container{
-	width: 100%;
-	height: 4rem;
+	height: 20%;
 	background-color: #ff00bf;
 }
 .weapons_container{
-	width: 100%;
-	height: 4rem;
+	height: 10rem;
 	background-color: #ffff00;
 }
 .attribute_container{
-	width: 100%;
-	height: 4rem;
+	height: 10rem;
 	background-color: #00ffff;
 }
