@@ -14,9 +14,10 @@ fs.readFile('./index.html', function (err, data) {
 });
 
 var server = http.createServer(function(request, response) {  
-  response.writeHeader(200, {'Content-Type': 'text/html'});
-  response.write(index);
-  response.end();
+    console.log(request);
+    response.writeHeader(200, {'Content-Type': 'text/html'});
+    response.write(index);
+    response.end();
 }).listen(1223);
 
 var socket = io.listen(server);
