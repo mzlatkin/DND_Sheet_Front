@@ -17,7 +17,7 @@ function dashboard_viewModel()
         }
     }
 
-    self.self.get_all_characters_success = function(data)
+    self.get_all_characters_success = function(data)
     {
         self.characters(JSON.parse(data));
         console.log(self.characters());
