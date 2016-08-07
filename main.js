@@ -1,9 +1,9 @@
 var io = require("socket.io");  
 var people = {};
 
-var http = require(‘http’);
-var fs = require(‘fs’);
-var io = require(‘socket.io’);  
+var http = require('http');
+var fs = require('fs');
+var io = require('socket.io');  
 var index;  
 
 fs.readFile('./index.html', function (err, data) {  
