@@ -25,7 +25,6 @@ function dashboard_viewModel()
         {
             temp_array.push(new character_viewModel(data[i]));
         }
-        self.character_detail(temp_array[0]);
         self.characters(temp_array);
     }
     
