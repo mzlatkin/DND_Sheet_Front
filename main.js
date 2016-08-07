@@ -1,4 +1,3 @@
-var io = require("socket.io");  
 var people = {};
 
 var http = require('http');
