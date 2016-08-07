@@ -14,7 +14,7 @@
     <script src="/js/js/client.js"></script>
     <script src="/js/js/dashboard_page_obj.js"></script>   
     <script src="/js/js/character_obj.js"></script>   
-    
+
     <script src="/js/js/character_details_obj.js"></script>   
     <script src="/js/js/character_armor_obj.js"></script>   
     <script src="/js/js/character_attribute_obj.js"></script>   
@@ -62,6 +62,12 @@
                     <span data-bind="text:alignment"></span>
                     <span data-bind="text:base_attack_bonus"></span>
                 </div>
+            <!-- /ko -->
+            <!-- ko foreach: skill -->
+                    <div>
+                        <span data-bind="text:skill.name"></span>
+                        <span data-bind="text:rank"></span>
+                    </div>
             <!-- /ko -->
         <!-- /ko -->
     </div>
