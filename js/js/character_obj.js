@@ -13,13 +13,11 @@ function character_viewModel(character_obj)
 
     self.get_details = function()
     {
-    	console.log(self);
     	socket.emit("get_character_details", self.pk());
     }
 
     self.get_details_success = function(data)
     {
-        console.log(data);
         data = JSON.parse(data);
         temp_array = [];
         for (var i = 0, i_len = data.length; i < i_len; ++i)
@@ -27,7 +25,6 @@ function character_viewModel(character_obj)
             temp_array.push(new character_details_viewModel(data[i]));
         }
         self.character_detail(temp_array[0]);
-        console.log(self.character_detail());
     }
 
 }

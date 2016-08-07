@@ -41,6 +41,13 @@
             <div class="col-xs-12">
                 <button type="submit" class="btn btn-default" data-bind="text:name, click:get_details"></button>
             </div>
+            <!-- ko foreach: character_detail -->
+                <div class="col-xs-4">
+                    <span data-bind="text:gender"></span>
+                    <span data-bind="text:alignment"></span>
+                    <span data-bind="text:base_attack_bonus"></span>
+                </div>
+            <!-- /ko -->
         <!-- /ko -->
     </div>
 </div>
