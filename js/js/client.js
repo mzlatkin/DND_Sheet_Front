@@ -3,12 +3,14 @@ $(document).ready(function(){
     viewModel = new dashboard_viewModel();
     ko.applyBindings(viewModel);
     viewModel.start_app(); 
+
     
     $("#chat").hide();
     $("#name").focus();
     $("form").submit(function(event){
         event.preventDefault();
     });
+    ready = false;
 
     $("#join").click(function(){
         var name = $("#name").val();
@@ -32,7 +34,10 @@ $(document).ready(function(){
                 $("#msg").focus();
             }
         }
-    });
+    // });
+    socket.on("get_all_characters", function(data) {
+        console.log(data)
+    })
 
     socket.on("update", function(msg) {
         if(ready)
@@ -61,18 +66,18 @@ $(document).ready(function(){
     });
 
 
-    $("#send").click(function(){
-        var msg = $("#msg").val();
-        socket.emit("send", msg);
-        $("#msg").val("");
-    });
+    // $("#send").click(function(){
+    //     var msg = $("#msg").val();
+    //     socket.emit("send", msg);
+    //     $("#msg").val("");
+    // });
 
-    $("#msg").keypress(function(e){
-        if(e.which == 13) {
-            var msg = $("#msg").val();
-            socket.emit("send", msg);
-            $("#msg").val("");
-        }
-    });
+    // $("#msg").keypress(function(e){
+    //     if(e.which == 13) {
+    //         var msg = $("#msg").val();
+    //         socket.emit("send", msg);
+    //         $("#msg").val("");
+    //     }
+    // });
 
 });

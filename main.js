@@ -44,6 +44,8 @@ request('http://192.168.0.23:8000/character/', function (error, response, body) 
 })
 
 socket.on("connection", function (client) {  
+    client.emit("get_all_characters", characters);
+    
     client.on("join", function(name){
         people[client.id] = name;
         client.emit("update", "You have connected to the server.");
