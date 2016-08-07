@@ -1,8 +1,8 @@
 var viewModel;
 $(document).ready(function(){ 
-    // viewModel = new dashboard_viewModel(dashboard_obj);
-    // ko.applyBindings(viewModel);
-    // viewModel.start_app(); 
+    viewModel = new dashboard_viewModel(dashboard_obj);
+    ko.applyBindings(viewModel);
+    viewModel.start_app(); 
     
     $("#chat").hide();
     $("#name").focus();
