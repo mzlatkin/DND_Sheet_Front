@@ -19,14 +19,15 @@ function character_viewModel(character_obj)
     self.get_details_success = function(data)
     {
         data = JSON.parse(data);
-        console.log(data[0]["character"])
-        console.log(self.pk())
-        temp_array = [];
-        for (var i = 0, i_len = data.length; i < i_len; ++i)
+        if(self.pk() == data[0]["character"])
         {
-            temp_array.push(new character_details_viewModel(data[i]));
-        }
-        self.character_detail(temp_array[0]);
+	        temp_array = [];
+	        for (var i = 0, i_len = data.length; i < i_len; ++i)
+	        {
+	            temp_array.push(new character_details_viewModel(data[i]));
+	        }
+	        self.character_detail(temp_array[0]);
+	    }
     }
 
 
