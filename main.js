@@ -38,11 +38,10 @@ var socket = io.listen(server);
 console.log("hello");
 request('http://192.168.0.23:8000/character/', function (error, response, body) {
   if (!error && response.statusCode == 200) {
-    console.log(body)
     characters = body  
+    console.log(characters);
   }
 })
- console.log(characters);
 
 socket.on("connection", function (client) {  
     client.on("join", function(name){
