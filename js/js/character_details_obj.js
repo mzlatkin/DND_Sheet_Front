@@ -4,5 +4,4 @@ function character_details_viewModel(character_details_obj)
     ko.mapping.fromJS(character_details_obj, {}, self);
 
     console.log(self);
-    socket.emit("join", "name");
 }
