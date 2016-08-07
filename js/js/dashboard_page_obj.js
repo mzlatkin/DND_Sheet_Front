@@ -10,7 +10,7 @@ function dashboard_viewModel()
         self.get_all_characters_success(data)
     })
 
-    socket.on("get_character", function(data) {
+    socket.on("got_character", function(data) {
         self.get_character_success(data)
     })
 
@@ -24,6 +24,7 @@ function dashboard_viewModel()
 
     self.get_character = function(pk)
     {
+        console.log(pk);
         socket.emit("get_character", pk);
     }
     self.get_character_success = function(data)
