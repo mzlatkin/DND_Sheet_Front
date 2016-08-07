@@ -1,32 +1,32 @@
 .character_picker {            
-    height:10rem;
+    height:5rem;
     background-color:#33cc33;
 }
 .char_data {
-    height:10rem;
+    height:5rem;
     background-color:#ff3300;
 }
 
 .armor_container{
-	height: 20rem;
+	height: 10rem;
 	background-color: #ff00bf;
 }
 
 .skill_container {
-	height: 50rem;
+	height: 25rem;
 	background-color: #0000ff;
 }
 .attribute_container {
-	height: 50rem;
+	height: 25rem;
 	background-color: #ff00bf;
 }
 
 
 .weapons_container{
-	height: 50rem;
+	height: 25rem;
 	background-color: #ffff00;
 }
 .attribute_container{
-	height: 50rem;
+	height: 25rem;
 	background-color: #00ffff;
 }
