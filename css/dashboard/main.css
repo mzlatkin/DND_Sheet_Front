@@ -18,7 +18,7 @@ html {
 }
 
 body {
-	background-color: #f0d175;
+	
     min-height: 100%;
     margin: 0 auto;
     width: 100%;
@@ -32,32 +32,24 @@ body {
 }
 
 .character_picker {            
-    height:10%
-  ;
-    background-color:#33cc33;
-}
-.char_data {
-    height:5%
-  ;
-    background-color:#ff3300;
-}
-.armor_container{
-	height: 10%;
-	background-color: #ff00bf;
+	
 }
 
+.char_data {
+    height:5%;
+}
+
+.armor_container{
+	height: 10%;
+}
 
 .skill_container {
 	height: 25%;
-	background-color: #0000ff;
 }
 .attribute_container {
 	height: 25%;
-	background-color: #ff00bf;
 }
-
 
 .weapons_container{
 	height: 25%;
-	background-color: #ffff00;
 }
