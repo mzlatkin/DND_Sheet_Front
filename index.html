@@ -1,12 +1,12 @@
 <!DOCTYPE html>  
 <html lang="en">
 <head>
+	<script src="/socket.io/socket.io.js"></script>
 	<script src="/jquery/jquery.min.js"></script>
     <script src="/knockout/knockout.min.js"></script>
     <script src="/knockout/ko.mapping.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"> -->
     <script>
         $(document).ready(function(){  
 	        var socket = io.connect("192.168.0.23:8080");

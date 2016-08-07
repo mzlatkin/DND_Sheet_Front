@@ -1,8 +1,10 @@
 var people = {};
 
+
+
 var http = require('http');
 var fs = require('fs');
-var io = require('socket.io');  
+var io = require('socket.io')(http);  
 var index;  
 
 var server = http.createServer(function(request, response) {
