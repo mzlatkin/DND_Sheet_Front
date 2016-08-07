@@ -29,7 +29,13 @@ function dashboard_viewModel()
     }
     self.get_character_success = function(data)
     {
-        self.character_detail(JSON.parse(data));
+        data = JSON.parse(data);
+        temp_array = [];
+        for (var i = 0, i_len = data.length; i < i_len; ++i)
+        {
+            temp_array.push(new character_details_viewModel(data[i]));
+        }
+        self.character_detail(temp_array);
         console.log(self.character_detail());
     }
 
