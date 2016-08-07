@@ -4,6 +4,7 @@ function dashboard_viewModel()
 
     self.characters = ko.observableArray();
     self.username = ko.observable("");
+    self.joined = ko.observable(false);
 
     socket.on("get_all_characters", function(data) {
         self.get_all_characters_success(data)
@@ -14,6 +15,7 @@ function dashboard_viewModel()
         if (name != "") {
             socket.emit("join", name);
             ready = true;
+            self.joined(true);
         }
     }
 
