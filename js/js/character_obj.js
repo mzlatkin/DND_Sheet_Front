@@ -113,6 +113,7 @@ function character_viewModel(character_obj)
     self.get_items_success = function(data)
     {
         data = JSON.parse(data);
+        console.log(data)
         if(self.pk() == data[0]["character"])
         {
             temp_array = [];
