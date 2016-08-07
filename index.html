@@ -39,7 +39,10 @@
                 <div class="col-xs-4">
                 <!-- ko foreach: items -->
                         <div>
-                            <span data-bind="text:name"></span>
+                            <span data-bind="text:item.name"></span>
+                            <span data-bind="text:item.weight"></span>
+                            <span data-bind="text:item.cost"></span>
+                            <span data-bind="text:amount"></span>
                         </div>
                 <!-- /ko -->
                 </div>

@@ -147,7 +147,7 @@ function character_viewModel(character_obj)
             for (var i = 0, i_len = data.length; i < i_len; ++i)
             {
                 temp_array.push(new character_weapon_viewModel(data[i]));
-                self.items.push(new character_item_viewModel(data[i]['weapon']['item']));
+                self.items.push(new character_item_viewModel({'character':self.pk(),'amount':1,'item':data[i]['weapon']['item']}));
             }
             self.weapons(temp_array);
         }
@@ -162,7 +162,7 @@ function character_viewModel(character_obj)
             for (var i = 0, i_len = data.length; i < i_len; ++i)
             {
                 temp_array.push(new character_armor_viewModel(data[i]));
-                self.items.push(new character_item_viewModel(data[i]['armor']['item']));
+                self.items.push(new character_item_viewModel({'character':self.pk(),'amount':1,'item':data[i]['armor']['item']}));
             }
             self.armor(temp_array);
         }
