@@ -3,6 +3,8 @@ function character_viewModel(character_obj)
     var self = this;    
     ko.mapping.fromJS(character_obj, {}, self);
 
+    self.character_detail = ko.observableArray();
+
     console.log(self);
 
     socket.on("got_character_details", function(data) {
