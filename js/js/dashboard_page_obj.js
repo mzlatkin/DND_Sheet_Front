@@ -4,7 +4,6 @@ function dashboard_viewModel()
 
     self.characters = ko.observableArray();
     self.username = ko.observable("");
-    self.character_detail = ko.observable();
 
     socket.on("get_all_characters", function(data) {
         self.get_all_characters_success(data)
