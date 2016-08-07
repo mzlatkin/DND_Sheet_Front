@@ -48,18 +48,13 @@ socket.on("connection", function (client) {
     client.on("join", function(name){
         people[client.id] = name;
         client.emit("get_all_characters", characters);
-        // client.emit("update", "You have connected to the server.");
-        // socket.sockets.emit("update", name + " has joined the server.")
-        // socket.sockets.emit("update-people", people);
     });
 
-    // client.on("send", function(msg){
-    //     socket.sockets.emit("chat", people[client.id], msg);
-    // });
-
-    // client.on("disconnect", function(){
-    //     socket.sockets.emit("update", people[client.id] + " has left the server.");
-    //     delete people[client.id];
-    //     socket.sockets.emit("update-people", people);
-    // });
+    client.on("get_character", function(pk){
+        request('http://192.168.0.23:8000/character_detail/?character='+pk, function (error, response, body) {
+          if (!error && response.statusCode == 200) {
+            client.emit("get_character", body);
+          }
+        })
+    });
 });

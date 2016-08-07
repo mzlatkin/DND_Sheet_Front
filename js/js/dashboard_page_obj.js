@@ -4,9 +4,14 @@ function dashboard_viewModel()
 
     self.characters = ko.observableArray();
     self.username = ko.observable("");
+    self.character_detail = ko.observable();
 
     socket.on("get_all_characters", function(data) {
         self.get_all_characters_success(data)
+    })
+
+    socket.on("get_character", function(data) {
+        self.get_character_success(data)
     })
 
     self.join = function(name)
@@ -15,6 +20,16 @@ function dashboard_viewModel()
             socket.emit("join", name);
             ready = true;
         }
+    }
+
+    self.get_character = function(pk)
+    {
+        socket.emit("get_character", pk);
+    }
+    self.get_character_success = function(data)
+    {
+        self.character_detail(JSON.parse(data));
+        console.log(self.character_detail());
     }
 
     self.get_all_characters_success = function(data)
