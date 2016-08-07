@@ -47,7 +47,7 @@ socket.on("connection", function (client) {
     
     client.on("join", function(name){
         people[client.id] = name;
-        socket.sockets.emit("get_all_characters", characters);
+        client.emit("get_all_characters", characters);
         // client.emit("update", "You have connected to the server.");
         // socket.sockets.emit("update", name + " has joined the server.")
         // socket.sockets.emit("update-people", people);
