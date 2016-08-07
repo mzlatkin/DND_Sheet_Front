@@ -1,5 +1,9 @@
-$(document).ready(function(){  
-    var socket = io.connect("192.168.0.23:8080");
+var viewModel;
+$(document).ready(function(){ 
+    viewModel = new dashboard_viewModel(dashboard_obj);
+    ko.applyBindings(viewModel);
+    viewModel.start_app(); 
+    
     $("#chat").hide();
     $("#name").focus();
     $("form").submit(function(event){
