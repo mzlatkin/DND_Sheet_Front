@@ -62,7 +62,8 @@ function character_viewModel(character_obj)
             {
                 temp_array.push(new character_skill_viewModel(data[i]));
             }
-            self.skills(temp_array[0]);
+            self.skills(temp_array);
+            console.log(self.skills())
         }
     }
 
