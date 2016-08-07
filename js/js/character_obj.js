@@ -19,7 +19,7 @@ function character_viewModel(character_obj)
     self.get_details_success = function(data)
     {
         data = JSON.parse(data);
-        console.log(data['character'])
+        console.log(data)
         console.log(self.pk())
         temp_array = [];
         for (var i = 0, i_len = data.length; i < i_len; ++i)
