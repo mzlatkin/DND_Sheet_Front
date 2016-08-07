@@ -12,6 +12,8 @@ function character_viewModel(character_obj)
     self.skills = ko.observableArray();
     self.char_attributes = ko.observableArray();
     self.car_class = ko.observableArray();
+    self.spells = ko.observableArray();
+    self.feats = ko.observableArray();
 
     console.log(self);
 
@@ -113,7 +115,6 @@ function character_viewModel(character_obj)
     self.get_items_success = function(data)
     {
         data = JSON.parse(data);
-        console.log(data)
         if(self.pk() == data[0]["character"])
         {
             temp_array = [];
