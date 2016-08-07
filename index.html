@@ -26,15 +26,8 @@
 <div class="row">
     <div class="span5 offset2" id="login">
         <form class="form-inline">
-              <input type="text" class="input-small" placeholder="Your name" id="name">
-            <input type="button" name="join" id="join" value="Join" class="btn btn-primary">
-        </form>
-    </div>
-
-    <div class="span5 offset2" id="chat">
-        <form id="2" class="form-inline">
-              <input type="text" class="input" placeholder="Your message" id="msg">
-            <input type="button" name="send" id="send" value="Send" class="btn btn-success">
+              <input type="text" class="input-small" placeholder="Your name" id="name" data-bind="value:username, valueUpdate:'input'">
+            <input type="button" name="join" id="join" value="Join" class="btn btn-primary" data-bind="click: join">
         </form>
     </div>
   </div>
