@@ -120,9 +120,8 @@ function character_viewModel(character_obj)
             temp_array = [];
             for (var i = 0, i_len = data.length; i < i_len; ++i)
             {
-                temp_array.push(new character_item_viewModel(data[i]));
+                self.items.push(new character_item_viewModel(data[i]));
             }
-            self.items(temp_array);
         }
     }
 
