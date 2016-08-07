@@ -1,6 +1,21 @@
 function dashboard_viewModel()
 {
     var self = this;    
+
+    self.array = ko.observableArray();
+    self.user_name = ko.observable("");
+
+    socket.on("get_all_characters", function(data) {
+        console.log(data)
+    })
+
+    self.join = function(name)
+    {
+        if (name != "") {
+            socket.emit("join", name);
+            ready = true;
+        }
+    }
     
     self.client_logo_success = function()
     {
