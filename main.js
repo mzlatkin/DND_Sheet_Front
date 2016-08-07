@@ -51,9 +51,16 @@ socket.on("connection", function (client) {
     });
 
     client.on("get_character_details", function(pk){
-        request('http://192.168.0.23:8000/character_detail/?character='+pk, function (error, response, body) {
+        request('http://192.168.0.23:8000/character_detail/get_details_by_character/?character='+pk, function (error, response, body) {
           if (!error && response.statusCode == 200) {
             client.emit("got_character_details", body);
+          }
+        })
+    });
+    client.on("get_character_skills", function(pk){
+        request('http://192.168.0.23:8000/skill_association/get_skill_association_by_character/?character='+pk, function (error, response, body) {
+          if (!error && response.statusCode == 200) {
+            client.emit("got_character_skills", body);
           }
         })
     });

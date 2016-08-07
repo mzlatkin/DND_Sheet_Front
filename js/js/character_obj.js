@@ -19,14 +19,18 @@ function character_viewModel(character_obj)
         self.get_details_success(data)
     })
 
+    socket.on("got_character_skills", function(data) {
+        self.get_skills_success(data)
+    })
+
     self.select = function()
     {
-    	self.selected(!self.selected());
+        self.selected(!self.selected());
     }
 
     self.get_details = function()
     {
-    	socket.emit("get_character_details", self.pk());
+        socket.emit("get_character_details", self.pk());
     }
 
     self.get_details_success = function(data)
@@ -34,13 +38,32 @@ function character_viewModel(character_obj)
         data = JSON.parse(data);
         if(self.pk() == data[0]["character"])
         {
-	        temp_array = [];
-	        for (var i = 0, i_len = data.length; i < i_len; ++i)
-	        {
-	            temp_array.push(new character_details_viewModel(data[i]));
-	        }
-	        self.character_detail(temp_array[0]);
-	    }
+            temp_array = [];
+            for (var i = 0, i_len = data.length; i < i_len; ++i)
+            {
+                temp_array.push(new character_details_viewModel(data[i]));
+            }
+            self.character_detail(temp_array[0]);
+        }
+    }
+
+    self.get_skills = function()
+    {
+        socket.emit("get_character_skills", self.pk());
+    }
+
+    self.get_skills_success = function(data)
+    {
+        data = JSON.parse(data);
+        if(self.pk() == data[0]["character"])
+        {
+            temp_array = [];
+            for (var i = 0, i_len = data.length; i < i_len; ++i)
+            {
+                temp_array.push(new character_skill_viewModel(data[i]));
+            }
+            self.skills(temp_array[0]);
+        }
     }
 
 
