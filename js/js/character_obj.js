@@ -15,8 +15,6 @@ function character_viewModel(character_obj)
     self.spells = ko.observableArray();
     self.feats = ko.observableArray();
 
-    console.log(self);
-
     socket.on("got_character_details", function(data) {
         self.get_details_success(data)
     })
@@ -115,6 +113,7 @@ function character_viewModel(character_obj)
     self.get_items_success = function(data)
     {
         data = JSON.parse(data);
+        console.log(data);
         if(self.pk() == data[0]["character"])
         {
             temp_array = [];
