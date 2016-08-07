@@ -35,7 +35,7 @@ var server = http.createServer(function(request, response) {
 var socket = io.listen(server);
 
 console.log("hello")
-request('192.168.0.23:8000', function (error, response, body) {
+request('http://192.168.0.23:8000/', function (error, response, body) {
   if (!error && response.statusCode == 200) {
     console.log(body) // Show the HTML for the Google homepage. 
   }
