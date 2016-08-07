@@ -30,7 +30,8 @@ function character_viewModel(character_obj)
 
     self.get_details = function()
     {
-        socket.emit("get_character_details", self.pk());
+        if (self.character_detail().length == 0)
+            socket.emit("get_character_details", self.pk());
     }
 
     self.get_details_success = function(data)
@@ -48,8 +49,11 @@ function character_viewModel(character_obj)
     }
 
     self.get_skills = function()
-    {
-        socket.emit("get_character_skills", self.pk());
+    {   
+        if (self.skills().length == 0)
+        {
+            socket.emit("get_character_skills", self.pk());
+        }
     }
 
     self.get_skills_success = function(data)
