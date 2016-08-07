@@ -6,19 +6,32 @@ var fs = require('fs');
 var io = require('socket.io');  
 var index;  
 
-fs.readFile('./index.html', function (err, data) {  
- if (err) {
-    throw err;
- }
- index = data;
-});
-
-var server = http.createServer(function(request, response) {  
-    console.log(request);
-    response.writeHeader(200, {'Content-Type': 'text/html'});
-    response.write(index);
-    response.end();
-}).listen(1223);
+var server = http.createServer(function(request, response) {
+    if (request.url.indexOf('.js') != -1)
+    {
+        fs.readFile("./" + request.url, 'utf-8', function (error, data) {
+            response.writeHead(200, {'Content-Type': 'text/javascript'});
+            response.write(data);
+            response.end();
+        });
+    }
+    else if (request.url.indexOf('.css') != -1)
+    {
+        fs.readFile("./" + request.url, 'utf-8', function (error, data) {
+            response.writeHead(200, {'Content-Type': 'text/css'});
+            response.write(data);
+            response.end();
+        });
+    }
+    else
+    {
+        fs.readFile("index.html", 'utf-8', function (error, data) {
+            response.writeHead(200, {'Content-Type': 'text/html'});
+            response.write(data);
+            response.end();
+        });
+    }
+}).listen(8080);
 
 var socket = io.listen(server);
 
