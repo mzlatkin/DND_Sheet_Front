@@ -9,14 +9,10 @@
     <div class="container-fluid">
         <div class="row">
             <!-- ko if: !joined() -->
-                <div class="row">
-                    <div class="span5 offset2" id="login">
-                        <form class="form-inline">
-                              <input type="text" class="input-small" placeholder="Your name" id="name" data-bind="value:username, valueUpdate:'input'">
-                            <input type="button" name="join" id="join" value="Join" class="btn btn-primary" data-bind="click: join">
-                        </form>
-                    </div>
-                </div>
+                <form class="form-inline">
+                      <input type="text" class="input-small" placeholder="Your name" id="name" data-bind="value:username, valueUpdate:'input'">
+                    <input type="button" name="join" id="join" value="Join" class="btn btn-primary" data-bind="click: join">
+                </form>
             <!-- /ko -->
 
             <!-- ko foreach: characters -->
