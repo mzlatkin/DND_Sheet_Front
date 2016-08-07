@@ -18,7 +18,7 @@ html {
 }
 
 body {
-	
+	background-color: #f0d175;
     min-height: 100%;
     margin: 0 auto;
     width: 100%;
@@ -32,7 +32,7 @@ body {
 }
 
 .character_picker {            
-	
+
 }
 
 .char_data {
