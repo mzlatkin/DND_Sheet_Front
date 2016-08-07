@@ -34,7 +34,7 @@ $(document).ready(function(){
                 $("#msg").focus();
             }
         }
-    // });
+    });
     socket.on("get_all_characters", function(data) {
         console.log(data)
     })
