@@ -1,15 +1,41 @@
-var http = require("http");
+var io = require("socket.io");  
+var people = {};
 
-http.createServer(function (request, response) {
+var http = require(‘http’);
+var fs = require(‘fs’);
+var io = require(‘socket.io’);  
+var index;  
 
-   // Send the HTTP header 
-   // HTTP Status: 200 : OK
-   // Content Type: text/plain
-   response.writeHead(200, {'Content-Type': 'text/plain'});
-   
-   // Send the response body as "Hello World"
-   response.end('Hello World\n');
-}).listen(8081);
+fs.readFile('./index.html', function (err, data) {  
+ if (err) {
+    throw err;
+ }
+ index = data;
+});
 
-// Console will print the message
-console.log('Server running at http://127.0.0.1:8081/');
+var server = http.createServer(function(request, response) {  
+  response.writeHeader(200, {'Content-Type': 'text/html'});
+  response.write(index);
+  response.end();
+}).listen(1223);
+
+var socket = io.listen(server);
+
+socket.on("connection", function (client) {  
+    client.on("join", function(name){
+        people[client.id] = name;
+        client.emit("update", "You have connected to the server.");
+        socket.sockets.emit("update", name + " has joined the server.")
+        socket.sockets.emit("update-people", people);
+    });
+
+    client.on("send", function(msg){
+        socket.sockets.emit("chat", people[client.id], msg);
+    });
+
+    client.on("disconnect", function(){
+        socket.sockets.emit("update", people[client.id] + " has left the server.");
+        delete people[client.id];
+        socket.sockets.emit("update-people", people);
+    });
+});
