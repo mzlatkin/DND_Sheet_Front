@@ -24,35 +24,40 @@ body {
     width: 100%;
 }
 
+.container-fluid-height {
+    min-height: 100%;
+}
+.containing-row{
+    min-height: 100%;
+}
+
 .character_picker {            
-    height:5rem;
+    height:10%
+  ;
     background-color:#33cc33;
 }
 .char_data {
-    height:5rem;
+    height:5%
+  ;
     background-color:#ff3300;
 }
-
 .armor_container{
-	height: 10rem;
+	height: 10%;
 	background-color: #ff00bf;
 }
 
+
 .skill_container {
-	height: 25rem;
+	height: 25%;
 	background-color: #0000ff;
 }
 .attribute_container {
-	height: 25rem;
+	height: 25%;
 	background-color: #ff00bf;
 }
 
 
 .weapons_container{
-	height: 25rem;
+	height: 25%;
 	background-color: #ffff00;
-}
-.attribute_container{
-	height: 25rem;
-	background-color: #00ffff;
 }
