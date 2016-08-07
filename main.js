@@ -1,10 +1,8 @@
 var people = {};
-
-
-
 var http = require('http');
 var fs = require('fs');
 var io = require('socket.io')(http);  
+var request = require('request');
 var index;  
 
 var server = http.createServer(function(request, response) {
@@ -35,6 +33,14 @@ var server = http.createServer(function(request, response) {
 }).listen(8080);
 
 var socket = io.listen(server);
+
+
+request('192.168.0.23:8000', function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+    console.log(body) // Show the HTML for the Google homepage. 
+  }
+})
+
 
 socket.on("connection", function (client) {  
     client.on("join", function(name){
