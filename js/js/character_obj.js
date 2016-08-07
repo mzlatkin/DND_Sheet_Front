@@ -1,7 +1,7 @@
 function character_viewModel(character_obj)
 {
     var self = this;    
-    ko.mapping.fromJS(character_details_obj, {}, self);
+    ko.mapping.fromJS(character_obj, {}, self);
 
     console.log(self);
 
