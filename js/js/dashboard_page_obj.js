@@ -10,10 +10,6 @@ function dashboard_viewModel()
         self.get_all_characters_success(data)
     })
 
-    socket.on("got_character", function(data) {
-        self.get_character_success(data)
-    })
-
     self.join = function(name)
     {
         if (name != "") {
@@ -22,27 +18,16 @@ function dashboard_viewModel()
         }
     }
 
-    self.get_character = function(character)
+    self.get_all_characters_success = function(data)
     {
-        console.log(character.pk);
-        socket.emit("get_character", character.pk);
-    }
-    self.get_character_success = function(data)
-    {
-        console.log(data);
         data = JSON.parse(data);
         temp_array = [];
         for (var i = 0, i_len = data.length; i < i_len; ++i)
         {
-            temp_array.push(new character_details_viewModel(data[i]));
+            temp_array.push(new character_viewModel(data[i]));
         }
-        self.character_detail(temp_array);
-    }
-
-    self.get_all_characters_success = function(data)
-    {
-        self.characters(JSON.parse(data));
-        console.log(self.characters());
+        self.character_detail(temp_array[0]);
+        self.characters(temp_array);
     }
     
 	self.start_app = function() 
