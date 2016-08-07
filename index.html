@@ -39,8 +39,16 @@
     <div class="row">
         <!-- ko foreach: characters -->
             <div class="col-xs-12">
-                <button type="submit" class="btn btn-default" data-bind="text:name, click:get_details"></button>
+                <button type="submit" class="btn btn-default" data-bind="text:name, click:select"></button>
             </div>
+            <!-- ko if: selected() -->
+                <button type="submit" class="btn btn-default" data-bind="click:get_details">get details</button>
+                <!-- <button type="submit" class="btn btn-default" data-bind="click:select">get items</button>
+                <button type="submit" class="btn btn-default" data-bind="click:select">get weapons</button>
+                <button type="submit" class="btn btn-default" data-bind="click:select">get armour</button>
+                <button type="submit" class="btn btn-default" data-bind="click:select">get skills</button>
+                <button type="submit" class="btn btn-default" data-bind="click:select">get attributes</button> -->
+            <!-- /ko -->
             <!-- ko foreach: character_detail -->
                 <div class="col-xs-4">
                     <span data-bind="text:gender"></span>

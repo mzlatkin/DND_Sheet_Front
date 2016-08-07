@@ -3,13 +3,26 @@ function character_viewModel(character_obj)
     var self = this;    
     ko.mapping.fromJS(character_obj, {}, self);
 
+    self.selected = ko.observable(false);
+
     self.character_detail = ko.observableArray();
+    self.items = ko.observableArray();
+    self.weapons = ko.observableArray();
+    self.armor = ko.observableArray();
+    self.skills = ko.observableArray();
+    self.char_attributes = ko.observableArray();
+    self.car_class = ko.observableArray();
 
     console.log(self);
 
     socket.on("got_character_details", function(data) {
         self.get_details_success(data)
     })
+
+    self.select = function()
+    {
+    	self.selected(!self.selected());
+    }
 
     self.get_details = function()
     {
