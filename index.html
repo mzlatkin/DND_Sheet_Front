@@ -37,7 +37,7 @@
     <div class="row">
         <!-- ko foreach: characters -->
             <div class="col-xs-12">
-                <button type="submit" class="btn btn-default" data-bind="text:name, click:$root.get_character.bind('hello',$index.pk)"></button>
+                <button type="submit" class="btn btn-default" data-bind="text:name, click:$root.get_character.bind()"></button>
             </div>
         <!-- /ko -->
     </div>
