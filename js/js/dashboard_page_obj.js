@@ -2,11 +2,11 @@ function dashboard_viewModel()
 {
     var self = this;    
 
-    self.array = ko.observableArray();
+    self.characters = ko.observableArray();
     self.username = ko.observable("");
 
     socket.on("get_all_characters", function(data) {
-        console.log(data)
+        self.get_all_characters_success(data)
     })
 
     self.join = function(name)
@@ -16,18 +16,15 @@ function dashboard_viewModel()
             ready = true;
         }
     }
-    
-    self.client_logo_success = function()
+
+    self.self.get_all_characters_success = function(data)
     {
-        console.log("success!")
-        // language = self.launch_data.lang();
-        // get_json_async_from_server('/lms/get_localization/?language='+language,{},self.load_localization_success);
+        self.characters(JSON.parse(data));
+        console.log(self.characters());
     }
-    
     
 	self.start_app = function() 
     {
         console.log("hello!")
-        // get_json_async_from_server('/lms/client_logo_item/', {}, self.client_logo_success);
     }
 }
