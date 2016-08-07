@@ -4,6 +4,7 @@ var fs = require('fs');
 var io = require('socket.io')(http);  
 var request = require('request');
 var index;  
+var characters = [];
 
 var server = http.createServer(function(request, response) {
     if (request.url.indexOf('.js') != -1)
@@ -37,10 +38,10 @@ var socket = io.listen(server);
 console.log("hello")
 request('http://192.168.0.23:8000/character/', function (error, response, body) {
   if (!error && response.statusCode == 200) {
-    console.log(body) // Show the HTML for the Google homepage. 
+    characters = body  
   }
 })
-
+ console.log(characters)
 
 socket.on("connection", function (client) {  
     client.on("join", function(name){
