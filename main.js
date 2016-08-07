@@ -15,14 +15,14 @@ var server = http.createServer(function(request, response) {
             response.end();
         });
     }
-    // else if (request.url.indexOf('.css') != -1)
-    // {
-    //     fs.readFile("./" + request.url, 'utf-8', function (error, data) {
-    //         response.writeHead(200, {'Content-Type': 'text/css'});
-    //         response.write(data);
-    //         response.end();
-    //     });
-    // }
+    else if (request.url.indexOf('.css') != -1)
+    {
+        fs.readFile("./" + request.url, 'utf-8', function (error, data) {
+            response.writeHead(200, {'Content-Type': 'text/css'});
+            response.write(data);
+            response.end();
+        });
+    }
     else
     {
         fs.readFile("index.html", 'utf-8', function (error, data) {
