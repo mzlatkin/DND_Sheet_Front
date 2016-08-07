@@ -22,10 +22,10 @@ function dashboard_viewModel()
         }
     }
 
-    self.get_character = function(pk)
+    self.get_character = function(character)
     {
-        console.log(pk);
-        socket.emit("get_character", pk);
+        console.log(character.pk);
+        socket.emit("get_character", character.pk);
     }
     self.get_character_success = function(data)
     {
