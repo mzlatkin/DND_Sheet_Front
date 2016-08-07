@@ -1,4 +1,4 @@
-function dashboard_viewModel(dashboard_obj)
+function dashboard_viewModel()
 {
     var self = this;    
     
@@ -13,6 +13,6 @@ function dashboard_viewModel(dashboard_obj)
 	self.start_app = function() 
     {
         console.log("hello!")
-        get_json_async_from_server('/lms/client_logo_item/', {}, self.client_logo_success);
+        // get_json_async_from_server('/lms/client_logo_item/', {}, self.client_logo_success);
     }
 }
