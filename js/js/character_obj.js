@@ -12,7 +12,7 @@ function character_viewModel(character_obj)
     self.get_details = function()
     {
     	console.log(self);
-    	socket.emit("get_character_details", self.pk);
+    	socket.emit("get_character_details", self.pk());
     }
 
     self.get_details_success = function(data)
