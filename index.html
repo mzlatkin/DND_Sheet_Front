@@ -21,28 +21,30 @@
                 <div class="col-xs-12">
                     <button type="submit" class="btn btn-default" data-bind="text:name, click:select"></button>
                 </div>
-                <!-- ko if: selected() -->
-                    <button type="submit" class="btn btn-default" data-bind="click:get_details">get details</button>
-                    <button type="submit" class="btn btn-default" data-bind="click:get_skills">get skills</button>
-                    <!-- <button type="submit" class="btn btn-default" data-bind="click:select">get items</button>
-                    <button type="submit" class="btn btn-default" data-bind="click:select">get weapons</button>
-                    <button type="submit" class="btn btn-default" data-bind="click:select">get armour</button>
-                    
-                    <button type="submit" class="btn btn-default" data-bind="click:select">get attributes</button> -->
-                <!-- /ko -->
+                <div class="col-xs-12">
                 <!-- ko foreach: character_detail -->
-                    <div class="col-xs-4">
                         <span data-bind="text:gender"></span>
                         <span data-bind="text:alignment"></span>
                         <span data-bind="text:base_attack_bonus"></span>
-                    </div>
                 <!-- /ko -->
+                </div>
+                <div class="col-xs-4">
                 <!-- ko foreach: skills -->
                         <div>
                             <span data-bind="text:skill.name"></span>
                             <span data-bind="text:rank"></span>
                         </div>
                 <!-- /ko -->
+                </div>
+                <div class="col-xs-4">
+                <!-- ko foreach: items -->
+                        <div>
+                            <span data-bind="text:name"></span>
+                            <span data-bind="text:weight"></span>
+                            <span data-bind="text:cost"></span>
+                        </div>
+                <!-- /ko -->
+                </div>
             <!-- /ko -->
         </div>
     </div>
