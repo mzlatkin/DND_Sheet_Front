@@ -80,46 +80,6 @@
                         <!-- /ko -->
                     <!-- /ko -->
                 <!-- /ko -->
-
-                <!-- ko if: !joined() -->
-                    <div class="col-xs-12">
-                        <form class="form-inline">
-                              <input type="text" class="input-small" placeholder="Your name" id="name" data-bind="value:username, valueUpdate:'input'">
-                            <input type="button" name="join" id="join" value="Join" class="btn btn-primary" data-bind="click: join">
-                        </form>
-                    </div>
-                <!-- /ko -->
-                <!-- ko foreach: characters -->
-                    <button type="submit" class="btn btn-default" data-bind="text:name, click:select"></button>
-                <!-- /ko -->
-
-                <!-- ko foreach: characters -->
-                    <div class="col-xs-12">
-                    <!-- ko foreach: character_detail -->
-                            <span data-bind="text:gender"></span>
-                            <span data-bind="text:alignment"></span>
-                            <span data-bind="text:base_attack_bonus"></span>
-                    <!-- /ko -->
-                    </div>
-                    <div class="col-xs-4">
-                    <!-- ko foreach: skills -->
-                            <div>
-                                <span data-bind="text:skill.name"></span>
-                                <span data-bind="text:rank"></span>
-                            </div>
-                    <!-- /ko -->
-                    </div>
-                    <div class="col-xs-4">
-                    <!-- ko foreach: items -->
-                            <div>
-                                <span data-bind="text:item.name"></span>
-                                <span data-bind="text:item.weight"></span>
-                                <span data-bind="text:item.cost"></span>
-                                <span data-bind="text:amount"></span>
-                            </div>
-                    <!-- /ko -->
-                    </div>
-                <!-- /ko -->
             </div>
         </div>
     </body>
