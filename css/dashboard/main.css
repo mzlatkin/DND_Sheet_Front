@@ -53,3 +53,10 @@ body {
 .weapons_container{
 	height: 25%;
 }
+
+.weapon_equipped{
+	background-color: #66ff33;
+}
+.unequipped{
+	background-color: #ff3300;
+}
