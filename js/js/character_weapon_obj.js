@@ -8,8 +8,8 @@ function character_weapon_viewModel(character_weapon_obj)
     })
 
     self.update_equipped = function(data){
-    	console.log(self.pk);
-    	console.log(data);
+    	console.log(self.pk());
+    	console.log(data.pk);
     }
 
     self.post_equipped = function(){
