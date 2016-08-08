@@ -159,7 +159,7 @@
                                                         <th data-bind="text:weapon.crit"></th>            
                                                         <th data-bind="text:weapon.range_radius"></th>            
                                                         <th>
-                                                            <input type="button" class="btn btn-primary" data-bind="text:equipped, click: post_equipped">
+                                                            <input type="submit" class="btn btn-default" data-bind="text:equipped, click: post_equipped">
                                                         </th>            
                                                     </tr>
                                                 </tbody>
@@ -175,7 +175,7 @@
                 <!-- ko if: !joined() -->
                     <div class="col-xs-12">
                         <form class="form-inline">
-                              <input type="text" class="input-small" placeholder="Your name" id="name" data-bind="value:username, valueUpdate:'input'">
+                            <input type="text" class="input-small" placeholder="Your name" id="name" data-bind="value:username, valueUpdate:'input'">
                             <input type="button" name="join" id="join" value="Join" class="btn btn-primary" data-bind="click: join">
                         </form>
                     </div>
