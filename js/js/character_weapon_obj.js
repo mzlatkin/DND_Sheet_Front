@@ -4,7 +4,7 @@ function character_weapon_viewModel(character_weapon_obj)
     ko.mapping.fromJS(character_weapon_obj, {}, self);
 
     socket.on("update_equiped", function(data) {
-        self.update_equped(data);
+        self.update_equipped(data);
     })
 
     self.update_equipped = function(data){
