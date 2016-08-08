@@ -114,7 +114,7 @@ socket.on("connection", function (client) {
             json: true,   // <--Very important!!!
             body: {'equipped': equipped}
         }, function (error, response, body){
-            console.log(error);
+            socket.socket.emit("got_character_feats", body);
         });
     });
 
