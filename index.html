@@ -158,7 +158,9 @@
                                                         <th data-bind="text:weapon.damge"></th>            
                                                         <th data-bind="text:weapon.crit"></th>            
                                                         <th data-bind="text:weapon.range_radius"></th>            
-                                                        <th data-bind="text:equipped"></th>            
+                                                        <th>
+                                                            <input type="button" class="btn btn-primary" data-bind="text:equipped, click: $root.post_equipped">
+                                                        </th>            
                                                     </tr>
                                                 </tbody>
                                             <!-- /ko -->
