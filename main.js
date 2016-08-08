@@ -108,6 +108,8 @@ socket.on("connection", function (client) {
     });
     client.on("post_weapon_equip", function(pk,equipped){
         console.log("hello")
+        console.log(pk)
+        console.log(equipped)
         request.post('http://192.168.0.23:8000/weapon_association/'+pk,{ form: { 'equipped': equipped } }, function (error, response, body) 
             {
                 if (!error && response.statusCode == 200) {
