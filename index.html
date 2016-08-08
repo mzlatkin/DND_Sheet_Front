@@ -52,8 +52,8 @@
                                                 <tbody>
                                                     <tr>
                                                         <th data-bind="text:skill.name"></th>
-                                                        <th data-bind="text:skill.attribute">Progress</th>
-                                                        <th data-bind="text:rank">Score</th>            
+                                                        <th data-bind="text:skill.attribute"></th>
+                                                        <th data-bind="text:rank"></th>            
                                                     </tr>
                                                 </tbody>
                                             <!-- /ko -->
@@ -75,9 +75,9 @@
                                             <!-- ko foreach: char_attributes -->
                                                 <tbody>
                                                     <tr>
-                                                        <th data-bind="text:attribute">Progress</th>
-                                                        <th data-bind="text:rank">Score</th>            
-                                                        <th data-bind="text:modifier">Score</th>            
+                                                        <th data-bind="text:attribute"></th>
+                                                        <th data-bind="text:rank"></th>            
+                                                        <th data-bind="text:modifier"></th>            
                                                     </tr>
                                                 </tbody>
                                             <!-- /ko -->
@@ -86,10 +86,33 @@
                                 </div>
                             </div>
 
-                            <div class="col-xs-12 weapons_container">
+                            <div class="col-xs-6 weapons_container">
                                 <div class="panel panel-default">
                                     <div class="panel-body">
-                                        weapons_container
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Weapon Type</th>  
+                                                    <th>Damage</th>
+                                                    <th>Crit</th>
+                                                    <th>Range</th>
+                                                    <th>Equipped</th>
+                                                </tr>
+                                            </thead>
+                                            <!-- ko foreach: char_attributes -->
+                                                <tbody>
+                                                    <tr>
+                                                        <th data-bind="text:weapon.item.name"></th>
+                                                        <th data-bind="text:weapon.weapon_type"></th>            
+                                                        <th data-bind="text:weapon.damge"></th>            
+                                                        <th data-bind="text:weapon.crit"></th>            
+                                                        <th data-bind="text:weapon.range_radius"></th>            
+                                                        <th data-bind="text:equipped"></th>            
+                                                    </tr>
+                                                </tbody>
+                                            <!-- /ko -->
+                                        </table>
                                     </div>
                                 </div>
                             </div>
