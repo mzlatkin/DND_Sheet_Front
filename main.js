@@ -110,7 +110,7 @@ socket.on("connection", function (client) {
 
         request({
             url: 'http://192.168.0.23:8000/weapon_association/'+pk+'/',
-            method: "POST",
+            method: "PATCH",
             json: true,   // <--Very important!!!
             body: {'equipped': equipped}
         }, function (error, response, body){
