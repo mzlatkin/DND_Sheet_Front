@@ -114,7 +114,7 @@ socket.on("connection", function (client) {
             json: true,   // <--Very important!!!
             body: {'equipped': equipped}
         }, function (error, response, body){
-            console.log(response);
+            console.log(error);
         });
     });
 
