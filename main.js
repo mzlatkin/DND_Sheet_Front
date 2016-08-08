@@ -110,7 +110,7 @@ socket.on("connection", function (client) {
         console.log("hello")
         console.log(pk)
         console.log(equipped)
-        request.post('http://192.168.0.23:8000/weapon_association/'+pk,{ form: { 'equipped': equipped } }, function (error, response, body) 
+        request.patch('http://192.168.0.23:8000/weapon_association/'+pk,{ form: { 'equipped': equipped } }, function (error, response, body) 
             {
                 console.log("posted")
                 console.log(response)
