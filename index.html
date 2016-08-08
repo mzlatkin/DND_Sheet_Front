@@ -40,7 +40,6 @@
                             <div class="col-xs-6 skill_container">
                                 <div class="panel panel-default">
                                     <div class="panel-body">
-                                        skill_container
                                         <table class="table">
                                             <thead>
                                                 <tr>
@@ -65,7 +64,24 @@
                             <div class="col-xs-6 attribute_container">
                                 <div class="panel panel-default">
                                     <div class="panel-body">
-                                        attribute_container
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Attribute</th>
+                                                    <th>Rank</th>  
+                                                    <th>Modifier</th>
+                                                </tr>
+                                            </thead>
+                                            <!-- ko foreach: attributes -->
+                                                <tbody>
+                                                    <tr>
+                                                        <th data-bind="text:attribute">Progress</th>
+                                                        <th data-bind="text:rank">Score</th>            
+                                                        <th data-bind="text:modifier">Score</th>            
+                                                    </tr>
+                                                </tbody>
+                                            <!-- /ko -->
+                                        </table>
                                     </div>
                                 </div>
                             </div>
