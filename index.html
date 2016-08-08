@@ -80,6 +80,15 @@
                         <!-- /ko -->
                     <!-- /ko -->
                 <!-- /ko -->
+
+                <!-- ko if: !joined() -->
+                    <div class="col-xs-12">
+                        <form class="form-inline">
+                              <input type="text" class="input-small" placeholder="Your name" id="name" data-bind="value:username, valueUpdate:'input'">
+                            <input type="button" name="join" id="join" value="Join" class="btn btn-primary" data-bind="click: join">
+                        </form>
+                    </div>
+                <!-- /ko -->
             </div>
         </div>
     </body>
