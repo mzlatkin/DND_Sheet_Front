@@ -10,6 +10,10 @@ function character_weapon_viewModel(character_weapon_obj)
     self.update_equipped = function(data){
     	console.log(self.pk());
     	console.log(data.pk);
+    	if(self.pk() == data.pk)
+    	{
+    		self.equipped(data.equipped);
+    	}
     }
 
     self.post_equipped = function(){
