@@ -10,15 +10,17 @@
             <div class="row containing-row">
 
                 <!-- ko if: joined() -->
-                    <!-- ko foreach: characters -->
+                    
                         <div class="col-xs-12 character_picker">
                             <div class="panel panel-default">
                                 <div class="panel-body">
+                                    <!-- ko foreach: characters -->
                                     <button type="submit" class="btn btn-default" data-bind="text:name, click:select"></button>
+                                    <!-- /ko -->
                                 </div>
                             </div>
                         </div>
-                    <!-- /ko -->
+                    
                     <!-- ko foreach: characters -->
                         <!-- ko if: selected() -->
                             <div class="col-xs-12 char_data">
