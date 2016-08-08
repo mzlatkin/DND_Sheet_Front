@@ -113,7 +113,7 @@ socket.on("connection", function (client) {
         request.post('http://192.168.0.23:8000/weapon_association/'+pk,{ form: { 'equipped': equipped } }, function (error, response, body) 
             {
                 console.log("posted")
-                console.log(response.statusCode)
+                console.log(response)
                 if (!error && response.statusCode == 200) {
                     console.log(body)
                 }
