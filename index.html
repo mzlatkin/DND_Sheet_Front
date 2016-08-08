@@ -26,14 +26,64 @@
                             <div class="col-xs-12 char_data">
                                 <div class="panel panel-default">
                                     <div class="panel-body">
-                                        char_data
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="">Name</th>
+                                                    <th class="">Race</th>
+                                                    <th class="">Size</th>                             
+                                                    <th class="">Gender</th>                             
+                                                    <th class="">Deity</th>                             
+                                                    <th class="">Alignment</th>                             
+                                                    <th class="">Base Attack Bonus</th>                             
+                                                </tr>
+                                            </thead>
+                                            <!-- ko foreach: character_detail -->
+                                                <tbody>
+                                                    <tr>
+                                                        <th data-bind="text:$parent.name"></th>    
+                                                        <th data-bind="text:race"></th>    
+                                                        <th data-bind="text:size"></th>    
+                                                        <th data-bind="text:gender"></th>    
+                                                        <th data-bind="text:deity"></th>    
+                                                        <th data-bind="text:alignment"></th>    
+                                                        <th data-bind="text:base_attack_bonus"></th>    
+                                                    </tr>
+                                                </tbody>
+                                            <!-- /ko -->
+                                        </table>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 armor_container">
                                 <div class="panel panel-default">
                                     <div class="panel-body">
-                                        armor_container
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="">Name</th>
+                                                    <th class="">AC Bonus</th>
+                                                    <th class="">Max Dextarity</th>                             
+                                                    <th class="">Check Penalty</th>                             
+                                                    <th class="">Spell Fail</th>                             
+                                                    <th class="">Speed</th>                             
+                                                    <th class="">Equipped</th>                             
+                                                </tr>
+                                            </thead>
+                                            <!-- ko foreach: armor -->
+                                                <tbody>
+                                                    <tr>
+                                                        <th data-bind="text:armor.item.name"></th>    
+                                                        <th data-bind="text:armor.ac_bonus"></th>    
+                                                        <th data-bind="text:armor.max_dex"></th>    
+                                                        <th data-bind="text:armor.check_penalty"></th>    
+                                                        <th data-bind="text:armor.spell_fail"></th>    
+                                                        <th data-bind="text:armor.speed"></th>    
+                                                        <th data-bind="text:equipped"></th>    
+                                                    </tr>
+                                                </tbody>
+                                            <!-- /ko -->
+                                        </table>
                                     </div>
                                 </div>
                             </div>
