@@ -4,9 +4,7 @@ function character_attribute_viewModel(character_attribute_obj)
     ko.mapping.fromJS(character_attribute_obj, {}, self);
 
     self.calculate_modifier = function(){
-    	return 0
+    	console.log(self.rank());
     }
     self.modifier = ko.observable(self.calculate_modifier());
-
-
 }
