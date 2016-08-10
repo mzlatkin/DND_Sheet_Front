@@ -15,7 +15,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <!-- ko foreach: characters -->
-                                    <button type="submit" class="btn btn-default" data-bind="text:name, click:select"></button>
+                                    <button type="submit" class="btn btn-default" data-bind="text:name, click:$parents.select_character.bind($index)"></button>
                                     <!-- /ko -->
                                 </div>
                             </div>
