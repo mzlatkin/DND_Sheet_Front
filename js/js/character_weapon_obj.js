@@ -7,7 +7,7 @@ function character_weapon_viewModel(character_weapon_obj)
         self.update_equipped_weapon(data);
     })
 
-    self.update_equipped = function(data){
+    self.update_equipped_weapon = function(data){
     	console.log(self.pk());
     	console.log(data.pk);
     	if(self.pk() == data.pk)
