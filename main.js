@@ -114,6 +114,7 @@ socket.on("connection", function (client) {
             json: true,   // <--Very important!!!
             body: {'equipped': equipped}
         }, function (error, response, body){
+            console.log(body);
             socket.sockets.emit("update_equiped", body);
         });
     });
