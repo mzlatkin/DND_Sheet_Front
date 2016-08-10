@@ -52,7 +52,7 @@ function character_viewModel(character_obj)
     {
         self.selected(true);
 
-        if (typeof self.character_detail().name() === 'undefined')
+        if (typeof self.character_detail().name === 'undefined')
         {
             socket.emit("get_character_details", self.pk());
             socket.emit("get_character_skills", self.pk());
