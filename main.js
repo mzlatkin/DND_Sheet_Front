@@ -35,7 +35,6 @@ var server = http.createServer(function(request, response) {
 
 var socket = io.listen(server);
 
-console.log("hello");
 request('http://192.168.0.23:8000/character/', function (error, response, body) {
   if (!error && response.statusCode == 200) {
     characters = body  
@@ -74,7 +73,6 @@ socket.on("connection", function (client) {
     client.on("get_character_items", function(pk){
         request('http://192.168.0.23:8000/item_association/get_item_association_by_character/?character='+pk, function (error, response, body) {
           if (!error && response.statusCode == 200) {
-            console.log("yep!")
             client.emit("got_character_items", body);
           }
         })
