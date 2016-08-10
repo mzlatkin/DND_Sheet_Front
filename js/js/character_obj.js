@@ -107,7 +107,7 @@ function character_viewModel(character_obj)
             temp_array = [];
             for (var i = 0, i_len = data.length; i < i_len; ++i)
             {
-                temp_array.push(new character_skill_viewModel(data[i]));
+                temp_array.push(new character_skill_viewModel(data[i],self.char_attributes()));
             }
             self.skills(temp_array);
         }
