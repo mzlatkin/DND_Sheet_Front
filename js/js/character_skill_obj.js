@@ -10,7 +10,7 @@ function character_skill_viewModel(character_skill_obj,attributes)
         	console.log(attributes[i].rank())
         	if(attributes[i].attribute() == self.skill.attribute())
         	{
-        		return attributes[i].rank()+self.rank()
+        		return attributes[i].modifier()+self.rank()
         	}
         }
     }
