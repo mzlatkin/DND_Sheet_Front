@@ -29,6 +29,7 @@ function character_viewModel(character_obj)
     })
 
     socket.on("got_character_items", function(data) {
+        console.log("called")
         self.get_items_success(data)
     })
 
