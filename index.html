@@ -23,28 +23,19 @@
                     <!-- ko foreach: characters -->
                         <!-- ko if: selected -->
                             <div data-bind="foreach: character_detail">
-                                <span data-bind="text:$parent.name"></span>    
-                                <span data-bind="text:race"></span>    
-                                <span data-bind="text:size"></span>    
-                                <span data-bind="text:gender"></span>    
-                                <span data-bind="text:deity"></span>    
-                                <span data-bind="text:alignment"></span>    
-                                <span data-bind="text:base_attack_bonus"></span>    
+                                <span data-bind="html:$parent.name"></span>    
+                                <span data-bind="html:race"></span>    
+                                <span data-bind="html:size"></span>    
+                                <span data-bind="html:gender"></span>    
+                                <span data-bind="html:deity"></span>    
+                                <span data-bind="html:alignment"></span>    
+                                <span data-bind="html:base_attack_bonus"></span>    
                             </div>
                         <!-- /ko -->
                     <!-- /ko -->
                     
                     <!-- ko foreach: characters -->
                         <!-- ko if: selected -->
-                            <div data-bind="foreach: character_detail">
-                                <span data-bind="text:$parent.name"></span>    
-                                <span data-bind="text:race"></span>    
-                                <span data-bind="text:size"></span>    
-                                <span data-bind="text:gender"></span>    
-                                <span data-bind="text:deity"></span>    
-                                <span data-bind="text:alignment"></span>    
-                                <span data-bind="text:base_attack_bonus"></span>    
-                            </div>
                             <div class="col-xs-12 char_data">
                                 <div class="panel panel-default">
                                     <div class="panel-body">
