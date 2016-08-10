@@ -52,12 +52,8 @@ function character_viewModel(character_obj)
     self.select = function()
     {
         self.selected(true);
-
-        console.log(self);
-
         if (!self.loaded())
         {
-            console.log('calling socets')
             socket.emit("get_character_details", self.pk());
             socket.emit("get_character_skills", self.pk());
             socket.emit("get_character_attributes", self.pk());
