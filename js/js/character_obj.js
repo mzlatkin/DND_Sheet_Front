@@ -18,34 +18,42 @@ function character_viewModel(character_obj)
 
     socket.on("got_character_details"+self.pk(), function(data) {
         self.get_details_success(data)
+        consoloe.log("got_character_details")
     })
 
     socket.on("got_character_skills"+self.pk(), function(data) {
         self.get_skills_success(data)
+        consoloe.log("got_character_skills")
     })
 
     socket.on("got_character_attributes"+self.pk(), function(data) {
         self.get_attributes_success(data)
+        consoloe.log("got_character_attributes")
     })
 
     socket.on("got_character_items"+self.pk(), function(data) {
         self.get_items_success(data)
+        consoloe.log("got_character_items")
     })
 
     socket.on("got_character_weapons"+self.pk(), function(data) {
         self.get_weapons_success(data)
+        consoloe.log("got_character_weapons")
     })
 
     socket.on("got_character_armor"+self.pk(), function(data) {
         self.get_armor_success(data)
+        consoloe.log("got_character_armor")
     })
 
     socket.on("got_character_spells"+self.pk(), function(data) {
         self.get_spells_success(data)
+        consoloe.log("got_character_spells")
     })
 
     socket.on("got_character_feats"+self.pk(), function(data) {
         self.get_feats_success(data)
+        consoloe.log("got_character_feats")
     })
 
 
@@ -55,8 +63,8 @@ function character_viewModel(character_obj)
         if (!self.loaded())
         {
             socket.emit("get_character_details", self.pk());
-            socket.emit("get_character_skills", self.pk());
             socket.emit("get_character_attributes", self.pk());
+            socket.emit("get_character_skills", self.pk());
             socket.emit("get_character_items", self.pk());
             socket.emit("get_character_weapons", self.pk());
             socket.emit("get_character_armor", self.pk());
