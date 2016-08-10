@@ -29,6 +29,7 @@ function character_viewModel(character_obj)
     socket.on("got_character_attributes"+self.pk(), function(data) {
         self.get_attributes_success(data)
         console.log("got_character_attributes")
+        self.get_every_thing_else()
     })
 
     socket.on("got_character_items"+self.pk(), function(data) {
@@ -64,16 +65,19 @@ function character_viewModel(character_obj)
         {
             socket.emit("get_character_details", self.pk());
             socket.emit("get_character_attributes", self.pk());
-            socket.emit("get_character_skills", self.pk());
-            socket.emit("get_character_items", self.pk());
-            socket.emit("get_character_weapons", self.pk());
-            socket.emit("get_character_armor", self.pk());
-            socket.emit("get_character_spells", self.pk());
-            socket.emit("get_character_feats", self.pk());
+            
             self.loaded(true);
         }
+    }
 
-        
+    self.get_every_thing_else = function()
+    {
+        socket.emit("get_character_skills", self.pk());
+        socket.emit("get_character_items", self.pk());
+        socket.emit("get_character_weapons", self.pk());
+        socket.emit("get_character_armor", self.pk());
+        socket.emit("get_character_spells", self.pk());
+        socket.emit("get_character_feats", self.pk());
     }
 
     self.get_details = function()
