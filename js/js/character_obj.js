@@ -14,6 +14,7 @@ function character_viewModel(character_obj)
     self.car_class = ko.observableArray();
     self.spells = ko.observableArray();
     self.feats = ko.observableArray();
+    self.loaded = ko.observable(false)
 
     socket.on("got_character_details", function(data) {
         self.get_details_success(data)
@@ -54,17 +55,18 @@ function character_viewModel(character_obj)
 
         console.log(self);
 
-        // if (typeof self.character_detail().name === 'undefined')
-        // {
-        //     socket.emit("get_character_details", self.pk());
-        //     socket.emit("get_character_skills", self.pk());
-        //     socket.emit("get_character_attributes", self.pk());
-        //     socket.emit("get_character_items", self.pk());
-        //     socket.emit("get_character_weapons", self.pk());
-        //     socket.emit("get_character_armor", self.pk());
-        //     socket.emit("get_character_spells", self.pk());
-        //     socket.emit("get_character_feats", self.pk());
-        // }
+        if (!self.loaded())
+        {
+            socket.emit("get_character_details", self.pk());
+            socket.emit("get_character_skills", self.pk());
+            socket.emit("get_character_attributes", self.pk());
+            socket.emit("get_character_items", self.pk());
+            socket.emit("get_character_weapons", self.pk());
+            socket.emit("get_character_armor", self.pk());
+            socket.emit("get_character_spells", self.pk());
+            socket.emit("get_character_feats", self.pk());
+            self.loaded(true);
+        }
 
         
     }
