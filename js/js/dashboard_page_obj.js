@@ -10,6 +10,10 @@ function dashboard_viewModel()
         self.get_all_characters_success(data)
     })
 
+    socket.on("update_equiped", function(data) {
+        self.update_equipped_weapon(data);
+    })
+
     self.join = function(name)
     {
         if (name != "") {
@@ -28,6 +32,16 @@ function dashboard_viewModel()
             temp_array.push(new character_viewModel(data[i]));
         }
         self.characters(temp_array);
+    }
+
+    
+    self.update_equipped_weapon = function(data)
+    {
+        for (var i = 0, i_len = self.characters().length; i < i_len; ++i)
+        {
+            console.log(data);
+            console.log(self.character()[i]);
+        } 
     }
     
 	self.start_app = function() 
