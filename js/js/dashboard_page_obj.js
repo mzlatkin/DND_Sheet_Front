@@ -40,7 +40,7 @@ function dashboard_viewModel()
         for (var i = 0, i_len = self.characters().length; i < i_len; ++i)
         {
             console.log(data);
-            console.log(self.character()[i]);
+            console.log(self.characters()[i]);
         } 
     }
     
