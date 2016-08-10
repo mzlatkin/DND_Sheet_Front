@@ -57,6 +57,7 @@ function character_viewModel(character_obj)
 
         if (!self.loaded())
         {
+            console.log('calling socets')
             socket.emit("get_character_details", self.pk());
             socket.emit("get_character_skills", self.pk());
             socket.emit("get_character_attributes", self.pk());
