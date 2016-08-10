@@ -22,15 +22,13 @@
                         </div>
                     <!-- ko foreach: characters -->
                         <!-- ko if: selected -->
-                            <div data-bind="foreach: character_detail">
                                 <span data-bind="html:name"></span>    
                                 <span data-bind="html:character_detail.race"></span>    
                                 <span data-bind="html:character_detail.size"></span>    
                                 <span data-bind="html:character_detail.gender"></span>    
                                 <span data-bind="html:character_detail.deity"></span>    
                                 <span data-bind="html:character_detail.alignment"></span>    
-                                <span data-bind="html:character_detail.base_attack_bonus"></span>    
-                            </div>
+                                <span data-bind="html:character_detail.base_attack_bonus"></span>   
                         <!-- /ko -->
                     <!-- /ko -->
                     
