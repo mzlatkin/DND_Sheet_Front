@@ -52,56 +52,56 @@ socket.on("connection", function (client) {
     client.on("get_character_details", function(pk){
         request('http://192.168.0.23:8000/character_detail/get_details_by_character/?character='+pk, function (error, response, body) {
           if (!error && response.statusCode == 200) {
-            client.emit("got_character_details", body);
+            client.emit("got_character_details"+body['pk'], body);
           }
         })
     });
     client.on("get_character_skills", function(pk){
         request('http://192.168.0.23:8000/skill_association/get_skill_association_by_character/?character='+pk, function (error, response, body) {
           if (!error && response.statusCode == 200) {
-            client.emit("got_character_skills", body);
+            client.emit("got_character_skills"+body['pk'], body);
           }
         })
     });
     client.on("get_character_attributes", function(pk){
         request('http://192.168.0.23:8000/attribute_association/get_attribute_association_by_character/?character='+pk, function (error, response, body) {
           if (!error && response.statusCode == 200) {
-            client.emit("got_character_attributes", body);
+            client.emit("got_character_attributes"+body['pk'], body);
           }
         })
     });
     client.on("get_character_items", function(pk){
         request('http://192.168.0.23:8000/item_association/get_item_association_by_character/?character='+pk, function (error, response, body) {
           if (!error && response.statusCode == 200) {
-            client.emit("got_character_items", body);
+            client.emit("got_character_items"+body['pk'], body);
           }
         })
     });
     client.on("get_character_weapons", function(pk){
         request('http://192.168.0.23:8000/weapon_association/get_weapon_association_by_character/?character='+pk, function (error, response, body) {
           if (!error && response.statusCode == 200) {
-            client.emit("got_character_weapons", body);
+            client.emit("got_character_weapons"+body['pk'], body);
           }
         })
     });
     client.on("get_character_armor", function(pk){
         request('http://192.168.0.23:8000/armor_association/get_armor_association_by_character/?character='+pk, function (error, response, body) {
           if (!error && response.statusCode == 200) {
-            client.emit("got_character_armor", body);
+            client.emit("got_character_armor"+body['pk'], body);
           }
         })
     });
     client.on("get_character_spells", function(pk){
         request('http://192.168.0.23:8000/spell_association/get_spell_association_by_character/?character='+pk, function (error, response, body) {
           if (!error && response.statusCode == 200) {
-            client.emit("got_character_spells", body);
+            client.emit("got_character_spells"+body['pk'], body);
           }
         })
     });
     client.on("get_character_feats", function(pk){
         request('http://192.168.0.23:8000/feat_association/get_feat_association_by_character/?character='+pk, function (error, response, body) {
           if (!error && response.statusCode == 200) {
-            client.emit("got_character_feats", body);
+            client.emit("got_character_feats"+body['pk'], body);
           }
         })
     });

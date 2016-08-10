@@ -16,50 +16,35 @@ function character_viewModel(character_obj)
     self.feats = ko.observableArray();
     self.loaded = ko.observable(false)
 
-    socket.on("got_character_details", function(data) {
-        console.log("called1")
-
+    socket.on("got_character_details"+self.pk(), function(data) {
         self.get_details_success(data)
     })
 
-    socket.on("got_character_skills", function(data) {
-        console.log("called2")
-
+    socket.on("got_character_skills"+self.pk(), function(data) {
         self.get_skills_success(data)
     })
 
-    socket.on("got_character_attributes", function(data) {
-        console.log("called3")
-
+    socket.on("got_character_attributes"+self.pk(), function(data) {
         self.get_attributes_success(data)
     })
 
-    socket.on("got_character_items", function(data) {
-        console.log("called4")
+    socket.on("got_character_items"+self.pk(), function(data) {
         self.get_items_success(data)
     })
 
-    socket.on("got_character_weapons", function(data) {
-        console.log("called5")
-
+    socket.on("got_character_weapons"+self.pk(), function(data) {
         self.get_weapons_success(data)
     })
 
-    socket.on("got_character_armor", function(data) {
-        console.log("called6")
-
+    socket.on("got_character_armor"+self.pk(), function(data) {
         self.get_armor_success(data)
     })
 
-    socket.on("got_character_spells", function(data) {
-        console.log("called7")
-
+    socket.on("got_character_spells"+self.pk(), function(data) {
         self.get_spells_success(data)
     })
 
-    socket.on("got_character_feats", function(data) {
-        console.log("called8")
-
+    socket.on("got_character_feats"+self.pk(), function(data) {
         self.get_feats_success(data)
     })
 
