@@ -52,7 +52,6 @@ function character_viewModel(character_obj)
     self.select = function()
     {
         self.selected(true);
-        console.log(self.character_detail())
         if (!self.loaded())
         {
             socket.emit("get_character_details", self.pk());
@@ -77,7 +76,6 @@ function character_viewModel(character_obj)
 
     self.get_details_success = function(data)
     {
-        console.log("hello")
         data = JSON.parse(data);
         if(self.pk() == data[0]["character"])
         {
