@@ -50,21 +50,20 @@ function character_viewModel(character_obj)
 
     self.select = function()
     {
-        self.selected(!self.selected());
-        if (self.selected())
+        self.selected(true);
+
+        if (typeof self.character_detail().name() === 'undefined')
         {
-            if (self.character_detail().length == 0)
-            {
-                socket.emit("get_character_details", self.pk());
-                socket.emit("get_character_skills", self.pk());
-                socket.emit("get_character_attributes", self.pk());
-                socket.emit("get_character_items", self.pk());
-                socket.emit("get_character_weapons", self.pk());
-                socket.emit("get_character_armor", self.pk());
-                socket.emit("get_character_spells", self.pk());
-                socket.emit("get_character_feats", self.pk());
-            }
+            socket.emit("get_character_details", self.pk());
+            socket.emit("get_character_skills", self.pk());
+            socket.emit("get_character_attributes", self.pk());
+            socket.emit("get_character_items", self.pk());
+            socket.emit("get_character_weapons", self.pk());
+            socket.emit("get_character_armor", self.pk());
+            socket.emit("get_character_spells", self.pk());
+            socket.emit("get_character_feats", self.pk());
         }
+
         
     }
 
