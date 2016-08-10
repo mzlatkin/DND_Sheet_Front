@@ -17,35 +17,49 @@ function character_viewModel(character_obj)
     self.loaded = ko.observable(false)
 
     socket.on("got_character_details", function(data) {
+        console.log("called1")
+
         self.get_details_success(data)
     })
 
     socket.on("got_character_skills", function(data) {
+        console.log("called2")
+
         self.get_skills_success(data)
     })
 
     socket.on("got_character_attributes", function(data) {
+        console.log("called3")
+
         self.get_attributes_success(data)
     })
 
     socket.on("got_character_items", function(data) {
-        console.log("called")
+        console.log("called4")
         self.get_items_success(data)
     })
 
     socket.on("got_character_weapons", function(data) {
+        console.log("called5")
+
         self.get_weapons_success(data)
     })
 
     socket.on("got_character_armor", function(data) {
+        console.log("called6")
+
         self.get_armor_success(data)
     })
 
     socket.on("got_character_spells", function(data) {
+        console.log("called7")
+
         self.get_spells_success(data)
     })
 
     socket.on("got_character_feats", function(data) {
+        console.log("called8")
+
         self.get_feats_success(data)
     })
 
@@ -118,7 +132,6 @@ function character_viewModel(character_obj)
     self.get_items_success = function(data)
     {
         data = JSON.parse(data);
-        console.log(data);
         if(self.pk() == data[0]["character"])
         {
             temp_array = [];
