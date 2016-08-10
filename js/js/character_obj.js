@@ -86,7 +86,7 @@ function character_viewModel(character_obj)
             {
                 temp_array.push(new character_details_viewModel(data[i]));
             }
-            self.character_detail(temp_array[0]);
+            self.character_detail(temp_array);
         }
     }
 
