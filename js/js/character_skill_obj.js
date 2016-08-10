@@ -7,7 +7,8 @@ function character_skill_viewModel(character_skill_obj,attributes)
     {
     	for (var i = 0, i_len = attributes.length; i < i_len; ++i)
         {
-        	if(attributes.attribute.name() == self.skill.attribute())
+
+        	if(attributes()[i].attribute.name() == self.skill.attribute())
         	{
         		return attributes.rank()+self.rank()
         	}
