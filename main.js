@@ -115,7 +115,7 @@ socket.on("connection", function (client) {
             body: {'equipped': equipped}
         }, function (error, response, body){
             console.log(body['pk']);
-            socket.sockets.emit("update_equiped", body);
+            socket.sockets.emit("update_equiped"+body['pk'], body);
         });
     });
 
