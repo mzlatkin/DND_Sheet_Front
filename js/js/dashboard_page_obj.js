@@ -21,6 +21,7 @@ function dashboard_viewModel()
 
     self.select_character = function(character)
     {
+        console.log(character.name());
         for (var i = 0, i_len = self.characters().length; i < i_len; ++i)
         {
             self.characters()[i].selected(false);
