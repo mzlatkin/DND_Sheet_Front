@@ -40,7 +40,15 @@ function dashboard_viewModel()
         for (var i = 0, i_len = self.characters().length; i < i_len; ++i)
         {
             console.log(data);
-            console.log(self.characters()[i]);
+            console.log(self.characters()[i].pk());
+            if (data["character"] == self.characters()[i].pk())
+            {
+                for (var w = 0, w_len = self.characters()[i].weapons().length; w < w_len; ++w)
+                {
+                    console.log(self.characters()[i].weapons()[w])
+                    console.log(data)
+                }
+            }
         } 
     }
     
