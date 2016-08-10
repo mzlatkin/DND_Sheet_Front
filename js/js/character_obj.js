@@ -52,17 +52,19 @@ function character_viewModel(character_obj)
     {
         self.selected(true);
 
-        if (typeof self.character_detail().name === 'undefined')
-        {
-            socket.emit("get_character_details", self.pk());
-            socket.emit("get_character_skills", self.pk());
-            socket.emit("get_character_attributes", self.pk());
-            socket.emit("get_character_items", self.pk());
-            socket.emit("get_character_weapons", self.pk());
-            socket.emit("get_character_armor", self.pk());
-            socket.emit("get_character_spells", self.pk());
-            socket.emit("get_character_feats", self.pk());
-        }
+        console.log(self);
+
+        // if (typeof self.character_detail().name === 'undefined')
+        // {
+        //     socket.emit("get_character_details", self.pk());
+        //     socket.emit("get_character_skills", self.pk());
+        //     socket.emit("get_character_attributes", self.pk());
+        //     socket.emit("get_character_items", self.pk());
+        //     socket.emit("get_character_weapons", self.pk());
+        //     socket.emit("get_character_armor", self.pk());
+        //     socket.emit("get_character_spells", self.pk());
+        //     socket.emit("get_character_feats", self.pk());
+        // }
 
         
     }
