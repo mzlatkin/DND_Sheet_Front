@@ -4,7 +4,7 @@ function character_attribute_viewModel(character_attribute_obj)
     ko.mapping.fromJS(character_attribute_obj, {}, self);
 
     self.calculate_modifier = function(){
-    	ret = Math.floor((self.rank()-10)/2);
+    	ret = Math.floor((self.rank()+self.effect()-10)/2);
     	return ret;
     }
     self.modifier = ko.observable(self.calculate_modifier());
