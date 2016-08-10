@@ -26,7 +26,7 @@ function dashboard_viewModel()
             console.log(self.characters()[i]);
             self.characters()[i].selected(0);
         }
-        character.selected(true);
+        character.select();
     }
 
     self.get_all_characters_success = function(data)
