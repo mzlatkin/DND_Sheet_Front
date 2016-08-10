@@ -19,13 +19,14 @@ function dashboard_viewModel()
         }
     }
 
-    self.select_character = function(data)
+    self.select_character = function(character)
     {
-        console.log(data);
         for (var i = 0, i_len = self.characters().length; i < i_len; ++i)
         {
-            console.log(self.characters[i]);
+            console.log(self.characters()[i]);
+            self.caharacters()[i].selected(0);
         }
+        character.selected(true);
     }
 
     self.get_all_characters_success = function(data)
